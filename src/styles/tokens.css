@@ -1,0 +1,39 @@
+:root {
+  /* ==========================================================================
+     COLOR SYSTEM — OPTION 2: PURE EDITORIAL & RUBY (OKLCH COMPLIANT)
+     Vogue/Kinfolk Editorial Stance: Pure canvas, razor-sharp ink, passionate Ruby
+     ========================================================================== */
+  
+  /* Canvas & Surfaces */
+  --color-bg: oklch(1.000 0.000 0);               /* Pure crisp white #ffffff */
+  --color-surface: oklch(0.975 0.005 50);         /* Fine archival paper tone #faf7f5 */
+  --color-surface-elevated: oklch(0.955 0.008 55);/* Subtle depth for photobook card #f3eee9 */
+  --color-surface-album: oklch(0.940 0.012 60);   /* Rich tactile album paper #ece4db */
+  --color-border: oklch(0.880 0.008 50);          /* Ultra-fine hairline border #ded7d1 */
+  --color-border-dark: oklch(0.200 0.000 0);     /* Strong editorial rule #333333 */
+
+  /* Ink & Typography */
+  --color-ink: oklch(0.140 0.000 0);              /* Deep velvet charcoal-black (15:1 contrast) */
+  --color-ink-secondary: oklch(0.320 0.005 40);   /* Mid-tone narrative ink (9:1 contrast) */
+  --color-muted: oklch(0.480 0.010 40);           /* Editorial dates & numbers (4.8:1 contrast) */
+  --color-faint: oklch(0.720 0.008 45);           /* Subtle ornaments & lines */
+
+  /* Emotional Brand Accents */
+  --color-primary: oklch(0.480 0.220 25);         /* Deep passionate Ruby Red (No neon) */
+  --color-primary-soft: oklch(0.940 0.040 25);    /* Soft romantic rose wash */
+  --color-accent: oklch(0.700 0.110 75);          /* Refined Champagne/Brass gold */
+  --color-accent-soft: oklch(0.950 0.030 75);     /* Delicate gold highlight */
+
+  /* Fonts */
+  --font-serif: "Cormorant Garamond", Georgia, serif;
+  --font-sans: "Plus Jakarta Sans", Inter, -apple-system, sans-serif;
+  --font-handwriting: "Caveat", cursive;
+
+  /* Layout & Spacing */
+  --content-max-width: 1120px;
+  --page-padding-x: clamp(1.25rem, 5vw, 3.5rem);
+
+  /* Easing curves */
+  --ease-editorial: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-gentle: cubic-bezier(0.25, 1, 0.5, 1);
+}
