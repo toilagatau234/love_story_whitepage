@@ -25,9 +25,6 @@ export const App: React.FC = () => {
 
   return (
     <div className="relative min-h-screen bg-bg text-ink font-sans selection:bg-primary-soft selection:text-ink">
-      {/* 35mm Subtle Film Texture */}
-      <div className="film-grain" aria-hidden="true" />
-
       {/* Reading Progress Bar */}
       <StoryProgress />
 

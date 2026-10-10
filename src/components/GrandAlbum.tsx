@@ -9,6 +9,33 @@ interface GrandAlbumProps {
 export const GrandAlbum: React.FC<GrandAlbumProps> = ({ chapter, onPhotoClick }) => {
   const { title, tag, lead, photos } = chapter;
 
+  // Helper render photo card without white blank spaces
+  const renderAlbumCard = (
+    photo: PhotoItem,
+    aspectClass: string,
+    tiltClass: string,
+    extraClass = ''
+  ) => (
+    <div
+      key={photo.id}
+      onClick={() => onPhotoClick(photo)}
+      className={`editorial-card-interactive group relative cursor-pointer overflow-hidden rounded-xl sm:rounded-lg bg-white p-1 sm:p-1.5 shadow-paper hover:shadow-paper-lg transition-all border border-border/60 ${aspectClass} ${tiltClass} ${extraClass}`}
+    >
+      <div className="w-full h-full overflow-hidden rounded-lg sm:rounded-[4px] relative">
+        <img
+          src={photo.url}
+          alt={photo.alt}
+          loading="lazy"
+          className="w-full h-full object-cover editorial-photo transition-transform duration-700 ease-out group-hover:scale-[1.04]"
+          style={{ filter: 'none' }}
+        />
+        <div className="sm:hidden absolute bottom-2 right-2 bg-black/40 backdrop-blur-sm text-[9px] text-white/90 px-1.5 py-0.5 rounded-full tracking-wider font-sans">
+          Xem
+        </div>
+      </div>
+    </div>
+  );
+
   return (
     <section id={chapter.id} className="chapter-section relative py-16 sm:py-28 px-4 sm:px-6 max-w-6xl mx-auto border-t border-border/40">
       {/* Header */}
@@ -36,99 +63,55 @@ export const GrandAlbum: React.FC<GrandAlbumProps> = ({ chapter, onPhotoClick })
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-8 lg:gap-14">
           {/* Left Page (3 Photos) */}
           <div className="flex flex-col gap-3.5 sm:gap-6 justify-between">
-            <div className="grid grid-cols-2 gap-3 sm:gap-4">
-              {photos[0] && (
-                <div
-                  onClick={() => onPhotoClick(photos[0])}
-                  className="editorial-card-interactive group relative cursor-pointer overflow-hidden rounded-xl sm:rounded bg-white p-1.5 sm:p-2 shadow-paper hover:shadow-paper-lg transition-all border border-border/60 tilt-left md:tilt-none"
-                >
-                  <img
-                    src={photos[0].url}
-                    alt={photos[0].alt}
-                    loading="lazy"
-                    className="w-full aspect-[3/4] object-cover editorial-photo rounded-lg sm:rounded-[2px] transition-transform duration-500 group-hover:scale-105"
-                    style={{ filter: 'none' }}
-                  />
-                </div>
-              )}
-              {photos[1] && (
-                <div
-                  onClick={() => onPhotoClick(photos[1])}
-                  className="editorial-card-interactive group relative cursor-pointer overflow-hidden rounded-xl sm:rounded bg-white p-1.5 sm:p-2 shadow-paper hover:shadow-paper-lg transition-all border border-border/60 tilt-right md:tilt-none sm:translate-y-2"
-                >
-                  <img
-                    src={photos[1].url}
-                    alt={photos[1].alt}
-                    loading="lazy"
-                    className="w-full aspect-[3/4] sm:aspect-[4/3] object-cover editorial-photo rounded-lg sm:rounded-[2px] transition-transform duration-500 group-hover:scale-105"
-                    style={{ filter: 'none' }}
-                  />
-                </div>
-              )}
+            {/* Top Row: photo-02 (square) and photo-03 (portrait) */}
+            <div className="grid grid-cols-2 gap-3 sm:gap-4 items-stretch">
+              {photos[0] &&
+                renderAlbumCard(
+                  photos[0],
+                  'w-full aspect-[4/5] sm:aspect-square',
+                  'tilt-left md:tilt-none'
+                )}
+              {photos[1] &&
+                renderAlbumCard(
+                  photos[1],
+                  'w-full aspect-[4/5] sm:aspect-[3/4]',
+                  'tilt-right md:tilt-none sm:translate-y-2'
+                )}
             </div>
 
-            {photos[2] && (
-              <div
-                onClick={() => onPhotoClick(photos[2])}
-                className="editorial-card-interactive group relative cursor-pointer overflow-hidden rounded-xl sm:rounded bg-white p-1.5 sm:p-2.5 shadow-paper hover:shadow-paper-lg transition-all border border-border/60"
-              >
-                <img
-                  src={photos[2].url}
-                  alt={photos[2].alt}
-                  loading="lazy"
-                  className="w-full aspect-[4/3] sm:aspect-[4/3] object-cover editorial-photo rounded-lg sm:rounded-[2px] transition-transform duration-500 group-hover:scale-105"
-                  style={{ filter: 'none' }}
-                />
-              </div>
-            )}
+            {/* Bottom wide/landscape: photo-01 */}
+            {photos[2] &&
+              renderAlbumCard(
+                photos[2],
+                'w-full aspect-[4/3] sm:aspect-[16/10]',
+                'md:tilt-none'
+              )}
           </div>
 
           {/* Right Page (3 Photos) */}
           <div className="flex flex-col gap-3.5 sm:gap-6 justify-between">
-            {photos[3] && (
-              <div
-                onClick={() => onPhotoClick(photos[3])}
-                className="editorial-card-interactive group relative cursor-pointer overflow-hidden rounded-xl sm:rounded bg-white p-1.5 sm:p-2.5 shadow-paper hover:shadow-paper-lg transition-all border border-border/60"
-              >
-                <img
-                  src={photos[3].url}
-                  alt={photos[3].alt}
-                  loading="lazy"
-                  className="w-full aspect-[4/3] sm:aspect-[4/3] object-cover editorial-photo rounded-lg sm:rounded-[2px] transition-transform duration-500 group-hover:scale-105"
-                  style={{ filter: 'none' }}
-                />
-              </div>
-            )}
+            {/* Top wide: photo-04 */}
+            {photos[3] &&
+              renderAlbumCard(
+                photos[3],
+                'w-full aspect-[4/3] sm:aspect-[16/10]',
+                'md:tilt-none'
+              )}
 
-            <div className="grid grid-cols-2 gap-3 sm:gap-4">
-              {photos[4] && (
-                <div
-                  onClick={() => onPhotoClick(photos[4])}
-                  className="editorial-card-interactive group relative cursor-pointer overflow-hidden rounded-xl sm:rounded bg-white p-1.5 sm:p-2 shadow-paper hover:shadow-paper-lg transition-all border border-border/60 tilt-right md:tilt-none"
-                >
-                  <img
-                    src={photos[4].url}
-                    alt={photos[4].alt}
-                    loading="lazy"
-                    className="w-full aspect-square sm:aspect-square object-cover editorial-photo rounded-lg sm:rounded-[2px] transition-transform duration-500 group-hover:scale-105"
-                    style={{ filter: 'none' }}
-                  />
-                </div>
-              )}
-              {photos[5] && (
-                <div
-                  onClick={() => onPhotoClick(photos[5])}
-                  className="editorial-card-interactive group relative cursor-pointer overflow-hidden rounded-xl sm:rounded bg-white p-1.5 sm:p-2 shadow-paper hover:shadow-paper-lg transition-all border border-border/60 tilt-left md:tilt-none sm:translate-y-2"
-                >
-                  <img
-                    src={photos[5].url}
-                    alt={photos[5].alt}
-                    loading="lazy"
-                    className="w-full aspect-[3/4] object-cover editorial-photo rounded-lg sm:rounded-[2px] transition-transform duration-500 group-hover:scale-105"
-                    style={{ filter: 'none' }}
-                  />
-                </div>
-              )}
+            {/* Bottom Row: photo-05 (square) and photo-06 (landscape 4:3) */}
+            <div className="grid grid-cols-2 gap-3 sm:gap-4 items-stretch">
+              {photos[4] &&
+                renderAlbumCard(
+                  photos[4],
+                  'w-full aspect-square',
+                  'tilt-right md:tilt-none'
+                )}
+              {photos[5] &&
+                renderAlbumCard(
+                  photos[5],
+                  'w-full aspect-square sm:aspect-[4/3]',
+                  'tilt-left md:tilt-none sm:translate-y-2'
+                )}
             </div>
           </div>
         </div>

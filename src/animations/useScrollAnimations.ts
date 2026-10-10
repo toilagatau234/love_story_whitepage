@@ -17,12 +17,12 @@ export const useScrollAnimations = () => {
         if (textBlock) {
           gsap.fromTo(
             textBlock,
-            { opacity: 0, y: 35 },
+            { opacity: 0, y: 24, force3D: true },
             {
               opacity: 1,
               y: 0,
-              duration: 1.1,
-              ease: 'power3.out',
+              duration: 0.9,
+              ease: 'power2.out',
               scrollTrigger: {
                 trigger: section,
                 start: 'top 85%',
@@ -32,45 +32,25 @@ export const useScrollAnimations = () => {
           );
         }
 
-        // Stagger photos softly with subtle scale & float
+        // Stagger photos softly with GPU acceleration
         const photos = section.querySelectorAll('.editorial-card-interactive');
         if (photos.length > 0) {
           gsap.fromTo(
             photos,
-            { opacity: 0, scale: 0.95, y: 30 },
+            { opacity: 0, y: 20, force3D: true },
             {
               opacity: 1,
-              scale: 1,
               y: 0,
-              duration: 1,
-              stagger: 0.12,
+              duration: 0.8,
+              stagger: 0.08,
               ease: 'power2.out',
               scrollTrigger: {
                 trigger: section,
-                start: 'top 80%',
+                start: 'top 82%',
                 toggleActions: 'play none none reverse',
               },
             }
           );
-
-          // Subtle Parallax effect on scroll for primary photos
-          const primaryPhotos = section.querySelectorAll('.parallax-subtle');
-          primaryPhotos.forEach((el) => {
-            gsap.fromTo(
-              el,
-              { y: 15 },
-              {
-                y: -15,
-                ease: 'none',
-                scrollTrigger: {
-                  trigger: section,
-                  start: 'top bottom',
-                  end: 'bottom top',
-                  scrub: 1.2,
-                },
-              }
-            );
-          });
         }
       });
     });

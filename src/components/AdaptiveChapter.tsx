@@ -63,17 +63,17 @@ export const AdaptiveChapter: React.FC<AdaptiveChapterProps> = ({ chapter, onPho
       id={chapter.id}
       className="chapter-section relative py-16 sm:py-28 px-4 sm:px-6 max-w-6xl mx-auto border-t border-border/40"
     >
-      {/* 1. GRAND SINGLE (1 Ảnh: Kỷ niệm năm ấy) */}
+      {/* 1. GRAND SINGLE (1 Ảnh: Kỷ niệm năm ấy - Scene 2) */}
       {layoutVariant === 'grand-single' && (
-        <div className="flex flex-col lg:grid lg:grid-cols-12 gap-8 lg:gap-14 items-center">
-          <div className="w-full lg:col-span-5 order-2 lg:order-1 text-left">
-            {renderTextBlock('lg:pb-4')}
+        <div className="max-w-4xl mx-auto flex flex-col md:flex-row gap-8 md:gap-10 items-center justify-center">
+          <div className="w-full md:w-5/12 order-2 md:order-1 text-left">
+            {renderTextBlock()}
           </div>
-          <div className="w-full lg:col-span-7 order-1 lg:order-2 flex justify-center">
+          <div className="w-full md:w-7/12 order-1 md:order-2 flex justify-center md:justify-end">
             {photos[0] &&
               renderPhotoCard(
                 photos[0],
-                'w-full max-w-md sm:max-w-lg',
+                'w-full max-w-md',
                 'aspect-[4/3]',
                 'tilt-right md:tilt-none',
                 true
