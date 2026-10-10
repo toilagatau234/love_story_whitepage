@@ -7,15 +7,18 @@ interface AdaptiveChapterProps {
 }
 
 export const AdaptiveChapter: React.FC<AdaptiveChapterProps> = ({ chapter, onPhotoClick }) => {
-  const { title, tag, lead, textPosition, layoutVariant, photos } = chapter;
+  const { title, tag, lead, layoutVariant, photos } = chapter;
 
-  // Text block component
+  // Text block component with editorial mobile styling
   const renderTextBlock = (extraClasses = '') => (
-    <div className={`chapter-text-block max-w-sm ${extraClasses}`}>
-      <span className="inline-block text-xs font-sans uppercase tracking-[0.2em] text-primary font-medium mb-2">
-        {tag}
-      </span>
-      <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-light text-ink tracking-tight leading-[1.18] mb-4 text-balance">
+    <div className={`chapter-text-block max-w-lg lg:max-w-sm ${extraClasses}`}>
+      <div className="inline-flex items-center gap-2 mb-2.5">
+        <span className="w-1.5 h-1.5 rounded-full bg-primary" />
+        <span className="text-[11px] sm:text-xs font-sans uppercase tracking-[0.22em] text-primary font-medium">
+          {tag}
+        </span>
+      </div>
+      <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-light text-ink tracking-tight leading-[1.2] mb-3.5 text-balance">
         {title}
       </h2>
       <p className="font-sans text-muted text-sm sm:text-base font-light leading-relaxed">
@@ -24,153 +27,178 @@ export const AdaptiveChapter: React.FC<AdaptiveChapterProps> = ({ chapter, onPho
     </div>
   );
 
-  // Render photo card without any captions over the photo
-  const renderPhotoCard = (photo: PhotoItem, className = '') => (
+  // Render photo card with tactile mobile border, shadow, and touch interaction
+  const renderPhotoCard = (
+    photo: PhotoItem,
+    className = '',
+    aspect = 'aspect-[3/4]',
+    tiltClass = '',
+    isPrimary = false
+  ) => (
     <div
       key={photo.id}
       onClick={() => onPhotoClick(photo)}
-      className={`group relative overflow-hidden rounded-[2px] bg-surface cursor-pointer shadow-sm hover:shadow-md transition-all duration-500 border border-border/60 ${className}`}
+      className={`editorial-card-interactive group relative overflow-hidden rounded-xl sm:rounded-lg bg-surface cursor-pointer shadow-paper hover:shadow-paper-lg transition-all duration-500 border border-border/70 p-1 sm:p-1.5 ${aspect} ${tiltClass} ${
+        isPrimary ? 'parallax-subtle' : ''
+      } ${className}`}
     >
-      <img
-        src={photo.url}
-        alt={photo.alt}
-        loading="lazy"
-        className="w-full h-full object-cover editorial-photo transition-transform duration-700 ease-out group-hover:scale-[1.03]"
-        style={{ filter: 'none' }}
-      />
+      <div className="w-full h-full overflow-hidden rounded-[10px] sm:rounded-[4px] relative">
+        <img
+          src={photo.url}
+          alt={photo.alt}
+          loading="lazy"
+          className="w-full h-full object-cover editorial-photo transition-transform duration-700 ease-out group-hover:scale-[1.04]"
+          style={{ filter: 'none' }}
+        />
+        {/* Subtle touch indicator pill on mobile */}
+        <div className="sm:hidden absolute bottom-2.5 right-2.5 bg-black/45 backdrop-blur-sm text-[10px] text-white/90 px-2 py-0.5 rounded-full tracking-wider font-sans opacity-70">
+          Chạm để xem
+        </div>
+      </div>
     </div>
   );
 
   return (
     <section
       id={chapter.id}
-      className="chapter-section relative py-20 sm:py-28 px-6 max-w-6xl mx-auto border-t border-border/40"
+      className="chapter-section relative py-16 sm:py-28 px-4 sm:px-6 max-w-6xl mx-auto border-t border-border/40"
     >
-      {/* 1. GRAND SINGLE (1 Image: e.g. Tấm ảnh báu vật duy nhất 6 năm) */}
+      {/* 1. GRAND SINGLE (1 Ảnh: Kỷ niệm năm ấy) */}
       {layoutVariant === 'grand-single' && (
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-end">
-          <div className="lg:col-span-5 order-2 lg:order-1">
-            {renderTextBlock('lg:pb-8')}
+        <div className="flex flex-col lg:grid lg:grid-cols-12 gap-8 lg:gap-14 items-center">
+          <div className="w-full lg:col-span-5 order-2 lg:order-1 text-left">
+            {renderTextBlock('lg:pb-4')}
           </div>
-          <div className="lg:col-span-7 order-1 lg:order-2 flex justify-center lg:justify-end">
+          <div className="w-full lg:col-span-7 order-1 lg:order-2 flex justify-center">
             {photos[0] &&
               renderPhotoCard(
                 photos[0],
-                'w-full max-w-md aspect-[4/3] sm:aspect-[4/3]'
+                'w-full max-w-md sm:max-w-lg',
+                'aspect-[4/3]',
+                'tilt-right md:tilt-none',
+                true
               )}
           </div>
         </div>
       )}
 
-      {/* 2. ASYMMETRIC TRIO (3 Images: e.g. 6 Năm Thương Thầm or Âm Thầm Giúp Đỡ) */}
+      {/* 2. ASYMMETRIC TRIO (3 Ảnh: Chương 1 - Những ngày đầu tiên) */}
       {layoutVariant === 'asymmetric-trio' && (
-        <>
-          {textPosition === 'top-left' ? (
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
-              {/* Text Top-Left */}
-              <div className="lg:col-span-4 flex flex-col justify-between h-full">
-                {renderTextBlock('mb-8')}
-                {photos[1] && (
-                  <div className="hidden lg:block w-3/4 self-start">
-                    {renderPhotoCard(photos[1], 'aspect-square')}
-                  </div>
-                )}
-              </div>
-
-              {/* Photos on Right & Center */}
-              <div className="lg:col-span-8 grid grid-cols-1 sm:grid-cols-2 gap-6 items-end">
-                {photos[0] && renderPhotoCard(photos[0], 'aspect-[3/4] sm:translate-y-6')}
-                <div className="flex flex-col gap-6">
-                  <div className="block lg:hidden">
-                    {photos[1] && renderPhotoCard(photos[1], 'aspect-square')}
-                  </div>
-                  {photos[2] && renderPhotoCard(photos[2], 'aspect-[3/4]')}
-                </div>
-              </div>
-            </div>
-          ) : (
-            /* Text on Right */
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
-              {/* Photos on Left */}
-              <div className="lg:col-span-8 grid grid-cols-1 sm:grid-cols-2 gap-6 items-start order-2 lg:order-1">
-                {photos[0] && renderPhotoCard(photos[0], 'aspect-[3/4]')}
-                <div className="flex flex-col gap-6 sm:translate-y-10">
-                  {photos[1] && renderPhotoCard(photos[1], 'aspect-[3/4]')}
-                  {photos[2] && renderPhotoCard(photos[2], 'aspect-[3/4]')}
-                </div>
-              </div>
-
-              {/* Text on Right */}
-              <div className="lg:col-span-4 order-1 lg:order-2 lg:pl-6">
-                {renderTextBlock()}
-              </div>
-            </div>
-          )}
-        </>
-      )}
-
-      {/* 3. EDITORIAL QUAD (4 Images: e.g. Điểm Tựa, Buổi Date, Xẻo Quýt) */}
-      {layoutVariant === 'editorial-quad' && (
-        <>
-          {textPosition === 'top-right' ? (
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
-              {/* 4 Photos in Asymmetric Grid */}
-              <div className="lg:col-span-8 grid grid-cols-2 gap-4 sm:gap-6 order-2 lg:order-1">
-                {photos[0] && renderPhotoCard(photos[0], 'aspect-[3/4]')}
-                {photos[1] && renderPhotoCard(photos[1], 'aspect-[4/3] sm:translate-y-8')}
-                {photos[2] && renderPhotoCard(photos[2], 'aspect-[3/4] -translate-y-2 sm:-translate-y-6')}
-                {photos[3] && renderPhotoCard(photos[3], 'aspect-[3/4] sm:translate-y-2')}
-              </div>
-
-              {/* Text Top-Right */}
-              <div className="lg:col-span-4 order-1 lg:order-2 lg:pl-4">
-                {renderTextBlock()}
-              </div>
-            </div>
-          ) : textPosition === 'bottom-right' ? (
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-end">
-              {/* 4 Photos */}
-              <div className="lg:col-span-8 grid grid-cols-2 gap-4 sm:gap-6 order-1">
-                {photos[0] && renderPhotoCard(photos[0], 'aspect-[3/4]')}
-                {photos[1] && renderPhotoCard(photos[1], 'aspect-[3/4] sm:translate-y-6')}
-                {photos[2] && renderPhotoCard(photos[2], 'aspect-[3/4]')}
-                {photos[3] && renderPhotoCard(photos[3], 'aspect-[3/4] sm:translate-y-6')}
-              </div>
-
-              {/* Text Bottom-Right */}
-              <div className="lg:col-span-4 order-2 lg:pl-4 lg:pb-8">
-                {renderTextBlock()}
-              </div>
-            </div>
-          ) : (
-            /* Text Left / Offset */
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
-              {/* Text Left */}
-              <div className="lg:col-span-4 order-1">
-                {renderTextBlock()}
-              </div>
-
-              {/* Photos Right */}
-              <div className="lg:col-span-8 grid grid-cols-2 gap-4 sm:gap-6 order-2">
-                {photos[0] && renderPhotoCard(photos[0], 'aspect-[3/4]')}
-                {photos[1] && renderPhotoCard(photos[1], 'aspect-[4/3] sm:translate-y-8')}
-                {photos[2] && renderPhotoCard(photos[2], 'aspect-[3/4]')}
-                {photos[3] && renderPhotoCard(photos[3], 'aspect-[4/3]')}
-              </div>
-            </div>
-          )}
-        </>
-      )}
-
-      {/* 4. OFFSET DUO (2 Images: e.g. Những Chuyến Đi Xa) */}
-      {layoutVariant === 'offset-duo' && (
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
-          <div className="lg:col-span-5 order-2 lg:order-1">
+        <div className="flex flex-col gap-8">
+          {/* Header text on top for mobile clarity */}
+          <div className="max-w-xl text-left">
             {renderTextBlock()}
           </div>
-          <div className="lg:col-span-7 grid grid-cols-2 gap-6 order-1 lg:order-2 items-center">
-            {photos[0] && renderPhotoCard(photos[0], 'aspect-[4/3]')}
-            {photos[1] && renderPhotoCard(photos[1], 'aspect-[4/3] sm:translate-y-8')}
+
+          {/* Mobile-first editorial collage: 1 Hero Photo + 2 Offset Polaroid cards */}
+          <div className="grid grid-cols-1 sm:grid-cols-12 gap-5 sm:gap-6 items-center">
+            {/* Primary Portrait Photo */}
+            <div className="sm:col-span-7 lg:col-span-6">
+              {photos[0] &&
+                renderPhotoCard(
+                  photos[0],
+                  'w-full',
+                  'aspect-[3/4]',
+                  'tilt-left md:tilt-none',
+                  true
+                )}
+            </div>
+
+            {/* 2 Supporting Photos in offset row/column */}
+            <div className="sm:col-span-5 lg:col-span-6 grid grid-cols-2 sm:grid-cols-1 gap-4 sm:gap-6 sm:translate-y-4">
+              {photos[1] &&
+                renderPhotoCard(
+                  photos[1],
+                  'w-full',
+                  'aspect-square sm:aspect-[4/3]',
+                  'tilt-right md:tilt-none'
+                )}
+              {photos[2] &&
+                renderPhotoCard(
+                  photos[2],
+                  'w-full',
+                  'aspect-[3/4]',
+                  'tilt-left md:tilt-none'
+                )}
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* 3. EDITORIAL QUAD (4 Ảnh: Buổi Date & Những Chuyến Đi) */}
+      {layoutVariant === 'editorial-quad' && (
+        <div className="flex flex-col gap-8">
+          {/* Text narrative */}
+          <div className="max-w-xl text-left">
+            {renderTextBlock()}
+          </div>
+
+          {/* Dynamic 4-Photo Layout: 2 pairs stacked with natural offset on mobile */}
+          <div className="grid grid-cols-2 lg:grid-cols-12 gap-3.5 sm:gap-6">
+            <div className="lg:col-span-3 flex flex-col gap-3.5 sm:gap-6">
+              {photos[0] &&
+                renderPhotoCard(
+                  photos[0],
+                  'w-full',
+                  'aspect-[3/4]',
+                  'tilt-left md:tilt-none',
+                  true
+                )}
+            </div>
+            <div className="lg:col-span-3 flex flex-col gap-3.5 sm:gap-6 sm:translate-y-6">
+              {photos[1] &&
+                renderPhotoCard(
+                  photos[1],
+                  'w-full',
+                  'aspect-[3/4] sm:aspect-[4/3]',
+                  'tilt-right md:tilt-none'
+                )}
+            </div>
+            <div className="lg:col-span-3 flex flex-col gap-3.5 sm:gap-6 -translate-y-1 sm:translate-y-2">
+              {photos[2] &&
+                renderPhotoCard(
+                  photos[2],
+                  'w-full',
+                  'aspect-[3/4]',
+                  'tilt-left md:tilt-none'
+                )}
+            </div>
+            <div className="lg:col-span-3 flex flex-col gap-3.5 sm:gap-6 sm:translate-y-8">
+              {photos[3] &&
+                renderPhotoCard(
+                  photos[3],
+                  'w-full',
+                  'aspect-[3/4] sm:aspect-[4/3]',
+                  'tilt-right md:tilt-none',
+                  true
+                )}
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* 4. OFFSET DUO (2 Ảnh) */}
+      {layoutVariant === 'offset-duo' && (
+        <div className="flex flex-col lg:grid lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+          <div className="w-full lg:col-span-5 text-left">
+            {renderTextBlock()}
+          </div>
+          <div className="w-full lg:col-span-7 grid grid-cols-2 gap-4 sm:gap-6 items-center">
+            {photos[0] &&
+              renderPhotoCard(
+                photos[0],
+                'w-full',
+                'aspect-[4/3]',
+                'tilt-left md:tilt-none',
+                true
+              )}
+            {photos[1] &&
+              renderPhotoCard(
+                photos[1],
+                'w-full sm:translate-y-6',
+                'aspect-[4/3]',
+                'tilt-right md:tilt-none'
+              )}
           </div>
         </div>
       )}
