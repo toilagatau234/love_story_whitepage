@@ -200,10 +200,10 @@ export const storyDataOriginal: StoryData = {
       aspectRatio: '4/3',
     },
     confessionLines: [
-      'Khoảng thời gian qua được ở cạnh bên em là những ngày tháng anh thấy trọn vẹn và bình yên nhất.',
-      'Anh muốn được đường hoàng nắm tay Bé Tú, được thương, được lo lắng và che chở cho em bằng một mối quan hệ rõ ràng nhất.',
+      'Bó hoa này là bó hoa đầu tiên anh tặng cho một người con gái. Anh muốn tạo cho em bất ngờ cơ, nhưng anh sợ nó chưa đúng ý dù anh biết em sẽ không bận tâm và luôn vui vẻ với những món quà anh tặng cho em. Nhưng anh luôn muốn cho em những cái tốt nhất.',
+      'Anh rất hạnh phúc vì em đã xuất hiện trong cuộc đời anh, chưa bao giờ hối hận vì đã thương em. Mong rằng em sẽ luôn bên cạnh anh và không rời đi nữa, để anh được là người được đồng hành và che chở cho em.',
     ],
-    proposalQuestion: 'Bé Tú đồng ý làm người yêu anh nhé?',
+    proposalQuestion: 'Bé Tú đồng ý làm người yêu anh nhé',
     epilogue: 'Bó hoa này và anh đang đợi em ngoài đời thực.',
   },
 };
