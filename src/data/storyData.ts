@@ -4,7 +4,7 @@ import { storyDataOriginal } from './storyData.original';
 // BẬT / TẮT CHẾ ĐỘ CHỮ TƯỢNG TRƯNG (DEMO / PLACEHOLDER)
 // true: Hiển thị chữ tượng trưng trung tính để gửi cho bạn bè xem thử.
 // false: Trả về nguyên bản toàn bộ lời tâm tư riêng tư của bạn.
-export const USE_PLACEHOLDER_MODE = true;
+export const USE_PLACEHOLDER_MODE = false;
 
 export const storyDataPlaceholder: StoryData = {
   meta: {
