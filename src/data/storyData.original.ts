@@ -94,45 +94,9 @@ export const storyDataOriginal: StoryData = {
       ],
     },
 
-    // 4. ĐIỂM TỰA BÌNH YÊN (4 ảnh)
+    // 4. BUỔI DATE ĐẦU TIÊN (4 ảnh)
     {
-      id: 'chapter-04-closer',
-      tag: 'Điểm Tựa',
-      title: 'Gắn kết và chở che',
-      lead: 'Những ngày giông bão trở thành cơ duyên để chăm sóc em từng chút một và nhận được sự tin tưởng từ gia đình.',
-      textPosition: 'top-right',
-      layoutVariant: 'editorial-quad',
-      photos: [
-        {
-          id: 'closer-01',
-          url: '/images/02-closer/photo-01.jpg',
-          alt: 'Khoảnh khắc chăm sóc 01',
-          aspectRatio: '3/4',
-        },
-        {
-          id: 'closer-02',
-          url: '/images/02-closer/photo-02.jpg',
-          alt: 'Khoảnh khắc chăm sóc 02',
-          aspectRatio: '4/3',
-        },
-        {
-          id: 'closer-03',
-          url: '/images/02-closer/photo-03.jpg',
-          alt: 'Khoảnh khắc chăm sóc 03',
-          aspectRatio: '3/4',
-        },
-        {
-          id: 'closer-04',
-          url: '/images/02-closer/photo-04.jpg',
-          alt: 'Khoảnh khắc chăm sóc 04',
-          aspectRatio: '3/4',
-        },
-      ],
-    },
-
-    // 5. BUỔI DATE ĐẦU TIÊN (4 ảnh)
-    {
-      id: 'chapter-05-first-date',
+      id: 'chapter-04-first-date',
       tag: 'Khoảnh Khắc Đáng Nhớ',
       title: 'Buổi hẹn hò đầu tiên',
       lead: 'Đàng hoàng thưa chuyện ba mẹ để được đón em đi chơi, từng nụ cười hôm ấy vẫn còn nguyên hơi ấm.',
@@ -166,9 +130,9 @@ export const storyDataOriginal: StoryData = {
       ],
     },
 
-    // 6. XẺO QUÝT & NHỮNG CHUYẾN ĐI (4 ảnh)
+    // 5. XẺO QUÝT & NHỮNG CHUYẾN ĐI (4 ảnh)
     {
-      id: 'chapter-06-xeo-quyt',
+      id: 'chapter-05-xeo-quyt',
       tag: 'Những Chuyến Đi',
       title: 'Từng dặm đường cùng em',
       lead: 'Những chuyến đi xa, bình yên bên em trong từng khoảnh khắc giản dị.',
@@ -202,9 +166,9 @@ export const storyDataOriginal: StoryData = {
       ],
     },
 
-    // 7. CUỐN ALBUM KỶ NIỆM (6 ảnh)
+    // 6. CUỐN ALBUM KỶ NIỆM (6 ảnh)
     {
-      id: 'chapter-07-album',
+      id: 'chapter-06-album',
       tag: 'Album Kỷ Niệm',
       title: 'A Story Only We Know',
       lead: 'Từng trang ảnh gắn kết tình cảm son sắt của hai đứa qua năm tháng.',

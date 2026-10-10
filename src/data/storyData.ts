@@ -55,48 +55,37 @@ export const storyDataPlaceholder: StoryData = {
       photos: storyDataOriginal.chapters[2].photos,
     },
 
-    // 4. CHƯƠNG 4 (4 ảnh)
+    // 4. CHƯƠNG 4 (4 ảnh - Buổi date đầu tiên)
     {
-      id: 'chapter-04-closer',
+      id: 'chapter-04-first-date',
       tag: 'Chương 04',
-      title: 'Gắn kết yêu thương',
-      lead: 'Cùng nhau vượt qua thử thách để thấu hiểu và sẻ chia nhiều hơn.',
-      textPosition: 'top-right',
-      layoutVariant: 'editorial-quad',
-      photos: storyDataOriginal.chapters[3].photos,
-    },
-
-    // 5. CHƯƠNG 5 (4 ảnh)
-    {
-      id: 'chapter-05-first-date',
-      tag: 'Chương 05',
       title: 'Kỷ niệm khó phai',
       lead: 'Những nụ cười rạng rỡ trong những ngày đầu gặp gỡ.',
       textPosition: 'bottom-right',
       layoutVariant: 'editorial-quad',
-      photos: storyDataOriginal.chapters[4].photos,
+      photos: storyDataOriginal.chapters[3].photos,
     },
 
-    // 6. CHƯƠNG 6 (4 ảnh)
+    // 5. CHƯƠNG 5 (4 ảnh - Những chuyến đi)
     {
-      id: 'chapter-06-xeo-quyt',
-      tag: 'Chương 06',
+      id: 'chapter-05-xeo-quyt',
+      tag: 'Chương 05',
       title: 'Những chuyến đi xa',
       lead: 'Từng bước chân đồng hành trên những cung đường khám phá.',
       textPosition: 'left',
       layoutVariant: 'editorial-quad',
-      photos: storyDataOriginal.chapters[5].photos,
+      photos: storyDataOriginal.chapters[4].photos,
     },
 
-    // 7. CHƯƠNG 7 (6 ảnh - Cuốn Album Lớn)
+    // 6. CHƯƠNG 6 (6 ảnh - Cuốn Album Kỷ Niệm)
     {
-      id: 'chapter-07-album',
-      tag: 'Chương 07',
+      id: 'chapter-06-album',
+      tag: 'Chương 06',
       title: 'Cuốn Album Kỷ Niệm',
       lead: 'Nơi lưu giữ trọn vẹn những trang ảnh đẹp nhất của hành trình.',
       textPosition: 'center',
       layoutVariant: 'grand-photobook',
-      photos: storyDataOriginal.chapters[6].photos,
+      photos: storyDataOriginal.chapters[5].photos,
     },
   ],
 
