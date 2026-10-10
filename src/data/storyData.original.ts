@@ -10,7 +10,7 @@ export const storyDataOriginal: StoryData = {
   hero: {
     eyebrow: 'A Story Only We Know',
     title: 'Có một câu chuyện anh muốn kể Bé Cam nghe',
-    subtitle: 'Từng thước phim, từng khoảnh khắc giản dị mà đong đầy của riêng hai chúng mình.',
+    subtitle: 'Từng khoảnh khắc giản dị, đong đầy của riêng hai ta.',
     ctaText: 'Bắt đầu câu chuyện',
     dateText: 'From The First Day',
   },
@@ -19,9 +19,9 @@ export const storyDataOriginal: StoryData = {
     // 1. NHỮNG NGÀY THANH XUÂN (3 ảnh)
     {
       id: 'chapter-01-wishes',
-      tag: 'Những Ngày Đầu Tiên',
-      title: 'Khoảng trời riêng có Bé Cam',
-      lead: 'Có những người, chỉ cần xuất hiện là đủ làm cả năm tháng tuổi trẻ trở nên đặc biệt. Với anh, người ấy là Bé Cam.',
+      tag: 'Những Ngày Đầu',
+      title: 'Khoảng trời riêng có Em',
+      lead: 'duy nhất một người, có thể làm cả thanh xuân của anh trở nên đặc biệt. cho anh biết yêu thật sự là như thế nào.',
       textPosition: 'top-left',
       layoutVariant: 'asymmetric-trio',
       photos: [
@@ -49,9 +49,9 @@ export const storyDataOriginal: StoryData = {
     // 2. KỶ NIỆM ĐẦU TIÊN (1 ảnh)
     {
       id: 'chapter-02-treasure',
-      tag: 'Kỷ Niệm Đọng Lại',
-      title: 'Tấm hình chụp chung năm ấy',
-      lead: 'Tấm hình chụp cùng nhau sau bao năm tháng, mỗi lần nhìn lại vẫn luôn nhắc anh nhớ về lý do nụ cười của em làm anh rung động.',
+      tag: 'Kỷ Niệm',
+      title: 'Tấm hình chụp chung năm đó',
+      lead: 'Tấm hình duy nhất mà 2 đứa chụp cùng với nhau.',
       textPosition: 'bottom-left',
       layoutVariant: 'grand-single',
       photos: [
@@ -69,8 +69,8 @@ export const storyDataOriginal: StoryData = {
     {
       id: 'chapter-04-first-date',
       tag: 'Khoảnh Khắc Đáng Nhớ',
-      title: 'Buổi hẹn hò đầu tiên',
-      lead: 'Đàng hoàng thưa chuyện với ba mẹ để được đón Bé Cam đi chơi, nụ cười rạng rỡ của em hôm ấy anh vẫn nhớ như in.',
+      title: 'Buổi date không bao giờ quên',
+      lead: 'Đàng hoàng thưa với cha mẹ để được đón Bé Cam đi chơi, những cuộc trò chuyện, những lời kể vui buồn.',
       textPosition: 'bottom-right',
       layoutVariant: 'editorial-quad',
       photos: [
@@ -118,16 +118,17 @@ export const storyDataOriginal: StoryData = {
         },
         {
           id: 'xeo-quyt-02',
-          url: '/images/03-xeo-quyt/photo-02.jpg',
-          alt: 'Chuyến đi 02',
-          aspectRatio: '4/3',
-        },
-        {
-          id: 'xeo-quyt-03',
           url: '/images/03-xeo-quyt/photo-03.jpg',
           alt: 'Chuyến đi 03',
           aspectRatio: '3/4',
         },
+        {
+          id: 'trips-02',
+          url: '/images/03-trips/photo-02.jpg',
+          alt: 'Chuyến đi 02',
+          aspectRatio: '4/3',
+        },
+        
         {
           id: 'trips-01',
           url: '/images/03-trips/photo-01.jpg',
@@ -142,16 +143,10 @@ export const storyDataOriginal: StoryData = {
       id: 'chapter-06-album',
       tag: 'Album Kỷ Niệm',
       title: 'A Story Only We Know',
-      lead: 'Mỗi bức ảnh là một mảnh ghép chân thật, ghi lại những khoảnh khắc đẹp nhất mà chúng mình đã dành cho nhau.',
+      lead: 'Mỗi bức ảnh là một mảnh ghép chân thật, ghi lại những khoảnh khắc đẹp nhất mà 2 ta đã dành cho nhau và nhũng câu chuyện của riêng 2 chúng ta.',
       textPosition: 'center',
       layoutVariant: 'grand-photobook',
       photos: [
-        {
-          id: 'album-01',
-          url: '/images/04-album/photo-01.jpg',
-          alt: 'Album kỷ niệm 01',
-          aspectRatio: '3/4',
-        },
         {
           id: 'album-02',
           url: '/images/04-album/photo-02.jpg',
@@ -162,6 +157,12 @@ export const storyDataOriginal: StoryData = {
           id: 'album-03',
           url: '/images/04-album/photo-03.jpg',
           alt: 'Album kỷ niệm 03',
+          aspectRatio: '3/4',
+        },
+        {
+          id: 'album-01',
+          url: '/images/04-album/photo-01.jpg',
+          alt: 'Album kỷ niệm 01',
           aspectRatio: '3/4',
         },
         {
@@ -187,7 +188,7 @@ export const storyDataOriginal: StoryData = {
   ],
 
   climax: {
-    tag: 'Lời Bày Tỏ Chân Thành',
+    tag: '',
     title: 'Điều anh muốn gửi gắm đến Bé Tú',
     lead: 'Đi qua từng kỷ niệm, đây là những lời xuất phát từ tận đáy lòng anh muốn trực tiếp nói cùng em.',
     buttonText: 'Mở điều bất ngờ',
