@@ -64,35 +64,6 @@ export const storyDataOriginal: StoryData = {
       ],
     },
 
-    // 3. Ở CẠNH BÊN EM (3 ảnh)
-    {
-      id: 'chapter-03-helping',
-      tag: 'Từng Điều Nhỏ Bé',
-      title: 'Bình yên ở cạnh bên em',
-      lead: 'Cùng em sẻ chia những điều nhỏ nhặt, cùng ăn những bữa cơm thường ngày, thấy lòng nhẹ nhõm và an yên đến lạ.',
-      textPosition: 'right',
-      layoutVariant: 'asymmetric-trio',
-      photos: [
-        {
-          id: 'helping-01',
-          url: '/images/02-helping/photo-01.jpg',
-          alt: 'Khoảnh khắc phụ giúp 01',
-          aspectRatio: '3/4',
-        },
-        {
-          id: 'helping-02',
-          url: '/images/02-helping/photo-02.jpg',
-          alt: 'Khoảnh khắc phụ giúp 02',
-          aspectRatio: '3/4',
-        },
-        {
-          id: 'helping-03',
-          url: '/images/02-helping/photo-03.jpg',
-          alt: 'Khoảnh khắc bữa cơm 03',
-          aspectRatio: '3/4',
-        },
-      ],
-    },
 
     // 4. BUỔI HẸN ĐẦU TIÊN (4 ảnh)
     {
