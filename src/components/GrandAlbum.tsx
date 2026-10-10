@@ -29,9 +29,9 @@ export const GrandAlbum: React.FC<GrandAlbumProps> = ({ chapter, onPhotoClick })
           className="w-full h-full object-cover editorial-photo transition-transform duration-700 ease-out group-hover:scale-[1.04]"
           style={{ filter: 'none' }}
         />
-        <div className="sm:hidden absolute bottom-2 right-2 bg-black/40 backdrop-blur-sm text-[9px] text-white/90 px-1.5 py-0.5 rounded-full tracking-wider font-sans">
+        {/* <div className="sm:hidden absolute bottom-2 right-2 bg-black/40 backdrop-blur-sm text-[9px] text-white/90 px-1.5 py-0.5 rounded-full tracking-wider font-sans">
           Xem
-        </div>
+        </div> */}
       </div>
     </div>
   );

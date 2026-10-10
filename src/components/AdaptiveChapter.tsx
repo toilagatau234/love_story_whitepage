@@ -51,9 +51,9 @@ export const AdaptiveChapter: React.FC<AdaptiveChapterProps> = ({ chapter, onPho
           style={{ filter: 'none' }}
         />
         {/* Subtle touch indicator pill on mobile */}
-        <div className="sm:hidden absolute bottom-2.5 right-2.5 bg-black/45 backdrop-blur-sm text-[10px] text-white/90 px-2 py-0.5 rounded-full tracking-wider font-sans opacity-70">
+        {/* <div className="sm:hidden absolute bottom-2.5 right-2.5 bg-black/45 backdrop-blur-sm text-[10px] text-white/90 px-2 py-0.5 rounded-full tracking-wider font-sans opacity-70">
           Chạm để xem
-        </div>
+        </div> */}
       </div>
     </div>
   );
