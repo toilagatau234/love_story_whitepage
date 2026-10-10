@@ -46,22 +46,17 @@ export const ClimaxProposal: React.FC<ClimaxProposalProps> = ({ onPhotoClick }) 
             </span>
           </div>
 
-          {/* Real Bouquet Photo in untouched colors with tactile frame */}
+          {/* Real Bouquet Photo in untouched colors, borderless */}
           <div
             onClick={() => onPhotoClick(climax.bouquetImage)}
-            className="editorial-card-interactive relative w-full max-w-sm sm:max-w-md my-6 sm:my-8 overflow-hidden rounded-2xl bg-white p-2 sm:p-2.5 shadow-paper-lg border border-border/80 cursor-pointer group tilt-left md:tilt-none"
+            className="editorial-card-interactive relative w-full max-w-sm sm:max-w-md my-6 sm:my-8 overflow-hidden rounded-xl shadow-paper-lg cursor-pointer group tilt-left md:tilt-none"
           >
-            <div className="overflow-hidden rounded-xl relative">
-              <img
-                src={climax.bouquetImage.url}
-                alt={climax.bouquetImage.alt}
-                className="w-full aspect-[4/3] object-cover editorial-photo transition-transform duration-700 group-hover:scale-105"
-                style={{ filter: 'none' }}
-              />
-              <div className="sm:hidden absolute bottom-2.5 right-2.5 bg-black/45 backdrop-blur-sm text-[10px] text-white/90 px-2 py-0.5 rounded-full tracking-wider font-sans">
-                Chạm để phóng lớn
-              </div>
-            </div>
+            <img
+              src={climax.bouquetImage.url}
+              alt={climax.bouquetImage.alt}
+              className="w-full aspect-[4/3] object-cover editorial-photo transition-transform duration-700 group-hover:scale-105"
+              style={{ filter: 'none' }}
+            />
           </div>
 
           {/* Confession Letter Card */}
