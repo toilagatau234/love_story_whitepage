@@ -3,25 +3,25 @@ import { StoryData } from '../types/story';
 export const storyDataOriginal: StoryData = {
   meta: {
     title: 'A Story Only We Know',
-    description: 'Hành trình tình yêu và lời hẹn ước chân thành dành riêng cho em.',
+    description: 'Hành trình kỷ niệm và lời ngỏ chân thành dành riêng cho Bé Cam.',
     bgMusicUrl: '/audio/ambient.mp3',
   },
 
   hero: {
     eyebrow: 'A Story Only We Know',
-    title: 'Có một câu chuyện anh muốn kể em nghe',
-    subtitle: 'Từng thước phim, từng kỷ niệm của riêng hai chúng ta.',
-    ctaText: 'Bắt đầu hành trình',
-    dateText: '6 Years & Beyond',
+    title: 'Có một câu chuyện anh muốn kể Bé Cam nghe',
+    subtitle: 'Từng thước phim, từng khoảnh khắc giản dị mà đong đầy của riêng hai chúng mình.',
+    ctaText: 'Bắt đầu câu chuyện',
+    dateText: 'From The First Day',
   },
 
   chapters: [
-    // 1. SÁU NĂM THƯƠNG THẦM (3 ảnh)
+    // 1. NHỮNG NGÀY THANH XUÂN (3 ảnh)
     {
       id: 'chapter-01-wishes',
-      tag: '6 Năm Thương Thầm',
-      title: 'Nguyện ước trong lòng',
-      lead: 'Thương em suốt 6 năm, từng nghĩ mình chỉ dám đứng từ xa nhìn lại.',
+      tag: 'Những Ngày Đầu Tiên',
+      title: 'Khoảng trời riêng có Bé Cam',
+      lead: 'Có những người, chỉ cần xuất hiện là đủ làm cả năm tháng tuổi trẻ trở nên đặc biệt. Với anh, người ấy là Bé Cam.',
       textPosition: 'top-left',
       layoutVariant: 'asymmetric-trio',
       photos: [
@@ -46,30 +46,30 @@ export const storyDataOriginal: StoryData = {
       ],
     },
 
-    // 2. TẤM ẢNH BÁU VẬT (1 ảnh)
+    // 2. KỶ NIỆM ĐẦU TIÊN (1 ảnh)
     {
       id: 'chapter-02-treasure',
-      tag: 'Báu Vật Thời Gian',
-      title: 'Tấm hình duy nhất',
-      lead: 'Tấm hình chụp chung duy nhất còn lại sau bao năm tháng, anh gìn giữ như báu vật của riêng mình.',
+      tag: 'Kỷ Niệm Đọng Lại',
+      title: 'Tấm hình chụp chung năm ấy',
+      lead: 'Tấm hình chụp cùng nhau sau bao năm tháng, mỗi lần nhìn lại vẫn luôn nhắc anh nhớ về lý do nụ cười của em làm anh rung động.',
       textPosition: 'bottom-left',
       layoutVariant: 'grand-single',
       photos: [
         {
           id: 'treasure-01',
           url: '/images/01-treasure/photo-01.jpg',
-          alt: 'Tấm hình duy nhất',
+          alt: 'Tấm hình chụp chung',
           aspectRatio: '4/3',
         },
       ],
     },
 
-    // 3. ÂM THẦM BÊN EM (3 ảnh)
+    // 3. Ở CẠNH BÊN EM (3 ảnh)
     {
       id: 'chapter-03-helping',
       tag: 'Từng Điều Nhỏ Bé',
-      title: 'Âm thầm bên em',
-      lead: 'Phụ giúp em mọi việc nhỏ nhặt nhất, không màng báo đáp, chỉ đơn giản vì quá thương em.',
+      title: 'Bình yên ở cạnh bên em',
+      lead: 'Cùng em sẻ chia những điều nhỏ nhặt, cùng ăn những bữa cơm thường ngày, thấy lòng nhẹ nhõm và an yên đến lạ.',
       textPosition: 'right',
       layoutVariant: 'asymmetric-trio',
       photos: [
@@ -94,12 +94,12 @@ export const storyDataOriginal: StoryData = {
       ],
     },
 
-    // 4. BUỔI DATE ĐẦU TIÊN (4 ảnh)
+    // 4. BUỔI HẸN ĐẦU TIÊN (4 ảnh)
     {
       id: 'chapter-04-first-date',
       tag: 'Khoảnh Khắc Đáng Nhớ',
       title: 'Buổi hẹn hò đầu tiên',
-      lead: 'Đàng hoàng thưa chuyện ba mẹ để được đón em đi chơi, từng nụ cười hôm ấy vẫn còn nguyên hơi ấm.',
+      lead: 'Đàng hoàng thưa chuyện với ba mẹ để được đón Bé Cam đi chơi, nụ cười rạng rỡ của em hôm ấy anh vẫn nhớ như in.',
       textPosition: 'bottom-right',
       layoutVariant: 'editorial-quad',
       photos: [
@@ -130,12 +130,12 @@ export const storyDataOriginal: StoryData = {
       ],
     },
 
-    // 5. XẺO QUÝT & NHỮNG CHUYẾN ĐI (4 ảnh)
+    // 5. NHỮNG DẶM ĐƯỜNG XA (4 ảnh)
     {
       id: 'chapter-05-xeo-quyt',
       tag: 'Những Chuyến Đi',
-      title: 'Từng dặm đường cùng em',
-      lead: 'Những chuyến đi xa, bình yên bên em trong từng khoảnh khắc giản dị.',
+      title: 'Từng dặm đường cùng nhau',
+      lead: 'Những chuyến đi xa cùng Bé Cam, chỉ cần có em đồng hành ở phía sau, mọi chặng đường đều hóa bình yên.',
       textPosition: 'left',
       layoutVariant: 'editorial-quad',
       photos: [
@@ -171,7 +171,7 @@ export const storyDataOriginal: StoryData = {
       id: 'chapter-06-album',
       tag: 'Album Kỷ Niệm',
       title: 'A Story Only We Know',
-      lead: 'Từng trang ảnh gắn kết tình cảm son sắt của hai đứa qua năm tháng.',
+      lead: 'Mỗi bức ảnh là một mảnh ghép chân thật, ghi lại những khoảnh khắc đẹp nhất mà chúng mình đã dành cho nhau.',
       textPosition: 'center',
       layoutVariant: 'grand-photobook',
       photos: [
@@ -216,22 +216,22 @@ export const storyDataOriginal: StoryData = {
   ],
 
   climax: {
-    tag: 'Lời Hẹn Ước',
-    title: 'Món quà cuối cùng dành cho em',
-    lead: 'Có một điều anh muốn trực tiếp nói với em lúc này.',
+    tag: 'Lời Bày Tỏ Chân Thành',
+    title: 'Điều anh muốn gửi gắm đến Bé Tú',
+    lead: 'Đi qua từng kỷ niệm, đây là những lời xuất phát từ tận đáy lòng anh muốn trực tiếp nói cùng em.',
     buttonText: 'Mở điều bất ngờ',
-    openedTitle: 'Dành trọn cho em',
+    openedTitle: 'Dành Trọn Cho Em',
     bouquetImage: {
       id: 'bouquet-final',
-      url: '/images/04-album/photo-01.jpg',
-      alt: 'Bó hoa tươi thắm dành riêng cho em',
+      url: '/images/flower-bouquet.jpg',
+      alt: 'Bó hoa tươi thắm dành riêng cho Bé Cam',
       aspectRatio: '4/3',
     },
     confessionLines: [
-      '6 năm trước, anh chỉ dám đứng từ xa nhìn em.',
-      'Còn hôm nay, anh muốn đường hoàng nắm tay em đi tiếp chặng đường phía trước.',
+      'Khoảng thời gian qua được ở cạnh bên em là những ngày tháng anh thấy trọn vẹn và bình yên nhất.',
+      'Anh muốn được đường hoàng nắm tay Bé Tú, được thương, được lo lắng và che chở cho em bằng một mối quan hệ rõ ràng nhất.',
     ],
-    proposalQuestion: 'Em đồng ý làm người yêu anh nhé?',
+    proposalQuestion: 'Bé Tú đồng ý làm người yêu anh nhé?',
     epilogue: 'Bó hoa này và anh đang đợi em ngoài đời thực.',
   },
 };
